@@ -19,7 +19,7 @@ body {
     background-repeat: no-repeat;
     font-family: 'Covered By Your Grace', cursive;
     overflow: hidden;
-    color: #5a0b2a; /* Dark pink for better contrast */
+    color: #5a0b2a;
 }
 
 /* ===== Main Content Area ===== */
@@ -33,14 +33,14 @@ body {
 
 /* ===== Buttons ===== */
 button {
-    font-size: 2.2rem; /* Larger for this font */
+    font-size: 2.5rem; /* Larger for this font */
     padding: 15px 40px;
     margin: 15px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     display: inline-block;
-    font-family: 'Covered By Your Grace', cursive;
+    font-family: 'Covered By Your Grace', cursive; /* ADD THIS */
     letter-spacing: 1px;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -60,9 +60,11 @@ button {
 /* ===== Message ===== */
 #message {
     margin-top: 20px;
-    font-size: 1.8rem;
+    font-size: 3rem; /* Larger for this font */
     color: #ff3366;
     min-height: 50px;
+    font-family: 'Covered By Your Grace', cursive; /* ADD THIS */
+    font-weight: normal;
 }
 
 /* ===== Mobile Styles ===== */
@@ -73,13 +75,13 @@ button {
     }
     
     button {
-        font-size: 1.3rem;
+        font-size: 2rem; /* Keep larger on mobile */
         padding: 12px 25px;
         margin: 8px;
     }
     
     #message {
-        font-size: 1.5rem;
+        font-size: 2.2rem; /* Keep larger on mobile */
         margin-top: 15px;
     }
 }
@@ -90,8 +92,12 @@ button {
     }
     
     button {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
         padding: 10px 20px;
+    }
+    
+    #message {
+        font-size: 1.8rem;
     }
 }
 </style>
@@ -111,7 +117,6 @@ function sayYes() {
 
 function moveNo() {
     const button = document.getElementById("no");
-    const content = document.querySelector('.content');
     
     // Get viewport dimensions
     const maxX = window.innerWidth - button.offsetWidth - 40;
@@ -136,4 +141,3 @@ function moveNo() {
 </script>
 </body>
 </html>
-
