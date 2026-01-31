@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine 💘</title>
+<style>
+/* ===== General Styles ===== */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("https://raw.githubusercontent.com/beamariec08-lgtm/valentine2026/83bad8ba80e5150afb6b64648a89ca0c07f4618b/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* ===== Main Content Area ===== */
+.content {
+    position: fixed;
+    bottom: 150px; /* Adjust this number to move buttons up/down */
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* ===== Buttons ===== */
+button {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#yes {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#no {
+    background-color: #6c757d;
+    color: white;
+    position: relative;
+}
+
+/* ===== Message ===== */
+#message {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    color: #ff3366;
+    min-height: 50px;
+}
+
+/* ===== Mobile Styles ===== */
+@media (max-width: 768px) {
+    .content {
+        bottom: 100px; /* Lower on mobile */
+        padding: 0 20px;
+    }
+    
+    button {
+        font-size: 1.3rem;
+        padding: 12px 25px;
+        margin: 8px;
+    }
+    
+    #message {
+        font-size: 1.5rem;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        bottom: 100px; /* Even lower on small phones */
+    }
+    
+    button {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="content">
+    <button id="yes" onclick="sayYes()">Yes 🥰</button>
+    <button id="no" onmouseover="moveNo()" ontouchstart="moveNo()">No 💔</button>
+    <div id="message"></div>
+</div>
+
+<script>
+function sayYes() {
+    document.getElementById("message").innerHTML = "YAY!!! 💕💕💕";
+}
+
+function moveNo() {
+    const button = document.getElementById("no");
+    const content = document.querySelector('.content');
+    
+    // Get viewport dimensions
+    const maxX = window.innerWidth - button.offsetWidth - 40;
+    const maxY = window.innerHeight - button.offsetHeight - 40;
+    
+    // Random position within viewport
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+    
+    // Position absolutely within viewport
+    button.style.position = 'fixed';
+    button.style.left = x + 'px';
+    button.style.top = y + 'px';
+    
+    // Reset after 2 seconds so it doesn't get stuck
+    setTimeout(() => {
+        button.style.position = '';
+        button.style.left = '';
+        button.style.top = '';
+    }, 2000);
+}
+</script>
+</body>
+</html>
