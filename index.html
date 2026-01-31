@@ -52,14 +52,24 @@ button {
 }
 
 #yes {
-    background-color: #ff4d6d;
+    background-color: rgba(255, 77, 109, 0.85); /* Pink with 85% opacity */
     color: white;
 }
 
+#yes:hover {
+    background-color: rgba(255, 51, 102, 0.9); /* Darker pink on hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 51, 102, 0.4);
+}
+
 #no {
-    background-color: #6c757d;
+    background-color: rgba(108, 117, 125, 0.85); /* Gray with 85% opacity */
     color: white;
     position: relative;
+}
+
+#no:hover {
+    background-color: rgba(90, 98, 104, 0.9); /* Darker gray on hover */
 }
 
 /* ===== Message ===== */
@@ -146,4 +156,5 @@ function moveNo() {
 </script>
 </body>
 </html>
+
 
